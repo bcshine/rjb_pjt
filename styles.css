@@ -982,63 +982,82 @@ main {
         font-size: 16px;
     }
     
-    /* 모바일에서 bullet 스타일로 변경 */
+    /* 모바일에서 세련된 버튼 스타일 */
     .map-buttons {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
         max-width: 100%;
-        text-align: left;
+        margin: 0 auto;
     }
     
     .map-btn {
         display: flex;
         align-items: center;
-        padding: 12px 15px;
-        font-size: 15px;
-        border-radius: 12px;
-        margin-bottom: 10px;
-        text-align: left;
+        justify-content: center;
+        padding: 16px 20px;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 16px;
+        text-align: center;
         position: relative;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        border: none;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        transition: all 0.3s ease;
+        transform: translateY(0);
     }
     
-    /* 각 버튼 앞에 컬러 bullet 추가 */
+    /* 각 버튼에 브랜드 이모지 추가 */
     .map-btn::before {
-        content: "●";
-        font-size: 18px;
-        margin-right: 12px;
-        font-weight: bold;
+        content: "";
+        font-size: 20px;
+        margin-right: 10px;
     }
     
     .map-btn.naver-map::before {
-        color: #03c75a;
+        content: "🟢";
     }
     
     .map-btn.kakao-map::before {
-        color: #fee500;
-        text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+        content: "🟡";
     }
     
     .map-btn.google-map::before {
-        color: #4285f4;
+        content: "🔵";
     }
     
-    /* 모바일에서 버튼 배경색을 더 연하게 */
+    /* 세련된 그라데이션 버튼 디자인 */
     .map-btn.naver-map {
-        background-color: rgba(3, 199, 90, 0.1);
-        color: #02b350;
-        border-color: #03c75a;
+        background: linear-gradient(135deg, #03c75a 0%, #02b350 100%);
+        color: white;
+        box-shadow: 0 4px 15px rgba(3, 199, 90, 0.4);
+    }
+    
+    .map-btn.naver-map:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(3, 199, 90, 0.5);
     }
     
     .map-btn.kakao-map {
-        background-color: rgba(254, 229, 0, 0.15);
+        background: linear-gradient(135deg, #fee500 0%, #fdd835 100%);
         color: #2c1810;
-        border-color: #fee500;
+        box-shadow: 0 4px 15px rgba(254, 229, 0, 0.5);
+    }
+    
+    .map-btn.kakao-map:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(254, 229, 0, 0.6);
     }
     
     .map-btn.google-map {
-        background-color: rgba(66, 133, 244, 0.1);
-        color: #3367d6;
-        border-color: #4285f4;
+        background: linear-gradient(135deg, #4285f4 0%, #3367d6 100%);
+        color: white;
+        box-shadow: 0 4px 15px rgba(66, 133, 244, 0.4);
+    }
+    
+    .map-btn.google-map:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(66, 133, 244, 0.5);
     }
     
     .store-address {
