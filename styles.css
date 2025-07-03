@@ -1,0 +1,1349 @@
+/* 전체 페이지의 기본 스타일 */
+* {
+    margin: 0; /* 바깥쪽 여백을 없애기 */
+    padding: 0; /* 안쪽 여백을 없애기 */
+    box-sizing: border-box; /* 박스 크기 계산 방법 설정 */
+}
+
+/* 전체 페이지에 넥슨폰트 적용하기 */
+body {
+    font-family: 'Noto Sans KR', sans-serif; /* 넥슨폰트 사용 */
+    background-color: white; /* 배경색을 흰색으로 설정 */
+}
+
+/* 헤더 스타일 - 웹사이트 맨 위 메뉴바 */
+.header {
+    background-color: white; /* 헤더 배경색을 흰색으로 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
+    position: fixed; /* 헤더를 화면에 고정시키기 */
+    top: 0; /* 맨 위에 위치시키기 */
+    left: 0; /* 왼쪽 끝에 위치시키기 */
+    right: 0; /* 오른쪽 끝까지 늘리기 */
+    z-index: 1000; /* 다른 요소들보다 위에 보이게 하기 */
+}
+
+/* 헤더 안의 내용을 담는 컨테이너 */
+.header-container {
+    max-width: 1200px; /* 최대 너비 설정 */
+    margin: 0 auto; /* 가운데 정렬 */
+    padding: 0 20px; /* 좌우 여백 */
+    
+    /* flexbox로 가로로 나란히 배치하기 */
+    display: flex;
+    align-items: center; /* 세로 가운데 정렬 */
+    justify-content: space-between; /* 양쪽 끝과 가운데로 배치 */
+    gap: 10px; /* 요소들 사이 간격을 10px로 설정 */
+    
+    height: 80px; /* 헤더 높이 설정 */
+}
+
+/* 헤더 왼쪽 부분: 로고와 브랜드 이름 */
+.header-left {
+    /* flexbox로 로고와 브랜드 이름을 가로로 나란히 배치 */
+    display: flex;
+    align-items: center; /* 세로 가운데 정렬 */
+    gap: 10px; /* 로고와 브랜드 이름 사이 간격 */
+}
+
+/* 로고 이미지 스타일 */
+.logo {
+    width: 50px; /* 로고 너비 */
+    height: 50px; /* 로고 높이 */
+    object-fit: cover; /* 이미지가 박스에 맞게 조정 */
+    border-radius: 8px; /* 모서리를 둥글게 */
+}
+
+/* 브랜드 타이틀 이미지 스타일 */
+.brand-title-image {
+    height: 32px; /* 헤더 높이에 맞게 조절 */
+    margin-left: 5px; /* 로고와 간격 */
+}
+
+/* 헤더 가운데 부분: 네비게이션 메뉴 */
+.header-nav {
+    /* flexbox로 메뉴들을 가로로 나란히 배치 */
+    display: flex;
+    align-items: center; /* 세로 가운데 정렬 */
+    gap: 30px; /* 메뉴들 사이 간격 */
+}
+
+/* 네비게이션 링크 스타일 */
+.nav-link {
+    text-decoration: none; /* 밑줄 제거 */
+    color: #333; /* 글자 색상을 어두운 회색으로 */
+    font-weight: 500; /* 글자를 중간 굵기로 */
+    font-size: 16px; /* 글자 크기 */
+    padding: 8px 16px; /* 안쪽 여백 */
+    border-radius: 20px; /* 모서리를 둥글게 */
+    transition: all 0.3s ease; /* 부드러운 변화 효과 */
+}
+
+/* 마우스를 올렸을 때 링크 스타일 */
+.nav-link:hover {
+    background-color: #f5f5f5; /* 배경색을 연한 회색으로 */
+    color: #000; /* 글자 색상을 검은색으로 */
+}
+
+/* 헤더 오른쪽 부분: 로그인 버튼 */
+.header-right {
+    /* flexbox로 오른쪽 정렬 */
+    display: flex;
+    align-items: center;
+}
+
+/* 로그인 버튼 스타일 */
+.login-btn {
+    background-color: white; /* 배경색을 흰색으로 */
+    color: #333; /* 글자 색상을 어두운 회색으로 */
+    border: 2px solid #333; /* 검은색 테두리 */
+    border-radius: 25px; /* 모서리를 둥글게 (radius 25) */
+    padding: 10px 20px; /* 안쪽 여백 */
+    font-size: 16px; /* 글자 크기 */
+    font-weight: 500; /* 글자를 중간 굵기로 */
+    cursor: pointer; /* 마우스 포인터를 손가락 모양으로 */
+    transition: all 0.3s ease; /* 부드러운 변화 효과 */
+}
+
+/* 마우스를 올렸을 때 로그인 버튼 스타일 */
+.login-btn:hover {
+    background-color: #333; /* 배경색을 검은색으로 */
+    color: white; /* 글자 색상을 흰색으로 */
+}
+
+/* 메인 콘텐츠 영역 */
+main {
+    margin-top: 100px; /* 헤더 아래에 여백 추가 */
+    padding: 20px; /* 안쪽 여백 */
+    text-align: center; /* 가운데 정렬 */
+}
+
+/* 히어로 섹션 스타일 - 메인 배너 슬라이더 */
+.hero-section {
+    position: relative; /* 위치 기준점 설정 */
+    width: 100%; /* 전체 너비 */
+    height: 50vh; /* 화면 높이의 절반 (기존 100vh에서 변경) */
+    overflow: hidden; /* 넘치는 부분 숨기기 */
+    margin-top: 80px; /* 헤더 높이만큼 여백 */
+}
+
+/* 슬라이더 컨테이너 */
+.hero-slider {
+    position: relative; /* 위치 기준점 설정 */
+    width: 100%; /* 전체 너비 */
+    height: 100%; /* 전체 높이 */
+}
+
+/* 개별 슬라이드 */
+.slide {
+    position: absolute; /* 절대 위치 */
+    top: 0; /* 맨 위에 위치 */
+    left: 0; /* 맨 왼쪽에 위치 */
+    width: 100%; /* 전체 너비 */
+    height: 100%; /* 전체 높이 */
+    opacity: 0; /* 처음에는 보이지 않게 */
+    transition: opacity 0.8s ease; /* 부드러운 페이드 효과 */
+}
+
+/* 활성화된 슬라이드 */
+.slide.active {
+    opacity: 1; /* 활성화된 슬라이드는 보이게 */
+}
+
+/* 슬라이드 배경 이미지 */
+.slide-image {
+    width: 100%; /* 전체 너비 */
+    height: 100%; /* 전체 높이 */
+    object-fit: cover; /* 이미지가 박스에 맞게 조정 */
+}
+
+/* 슬라이드 내용 (텍스트와 버튼) */
+.slide-content {
+    position: absolute; /* 절대 위치 */
+    top: 50%; /* 세로 가운데 */
+    left: 50%; /* 가로 가운데 */
+    transform: translate(-50%, -50%); /* 정확한 가운데 정렬 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+    color: white; /* 글자 색상을 흰색으로 */
+    z-index: 10; /* 이미지 위에 보이게 */
+    
+    /* 텍스트 그림자 효과로 배경과 대비 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* 브랜드 이름 스타일 */
+.slide-brand {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+}
+
+/* 슬라이드 제목 스타일 (텍스트용) */
+.slide-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    color: #fff;
+    line-height: 1.2;
+}
+
+/* 슬라이드 설명 스타일 */
+.slide-description {
+    font-size: 1.5rem; /* 글자 크기 */
+    font-weight: 400; /* 글자 굵기 */
+    margin-bottom: 2rem; /* 아래 여백 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* 슬라이드 버튼 컨테이너 */
+.slide-buttons {
+    display: flex; /* 가로로 나란히 배치 */
+    gap: 1rem; /* 버튼 사이 간격 */
+    justify-content: center; /* 가운데 정렬 */
+    flex-wrap: wrap; /* 모바일에서 줄바꿈 */
+}
+
+/* 버튼 기본 스타일 */
+.btn {
+    padding: 15px 30px; /* 안쪽 여백 */
+    font-size: 1.1rem; /* 글자 크기 */
+    font-weight: 600; /* 글자 굵기 */
+    border: none; /* 테두리 없애기 */
+    border-radius: 30px; /* 모서리를 둥글게 */
+    cursor: pointer; /* 마우스 포인터를 손가락 모양으로 */
+    text-decoration: none; /* 링크 밑줄 제거 */
+    display: inline-block; /* 인라인 블록으로 */
+    transition: all 0.3s ease; /* 부드러운 변화 효과 */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* 버튼 글자 그림자 */
+}
+
+/* 구매하기 버튼 스타일 */
+.btn-primary {
+    background-color: #ff6b35; /* 주황색 배경 */
+    color: white; /* 흰색 글자 */
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4); /* 그림자 효과 */
+}
+
+/* 구매하기 버튼 호버 효과 */
+.btn-primary:hover {
+    background-color: #e55a2b; /* 더 진한 주황색 */
+    transform: translateY(-2px); /* 살짝 위로 올리기 */
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.6); /* 더 진한 그림자 */
+}
+
+/* 예약하기 버튼 스타일 */
+.btn-secondary {
+    background-color: transparent; /* 투명 배경 */
+    color: white; /* 흰색 글자 */
+    border: 2px solid white; /* 흰색 테두리 */
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2); /* 그림자 효과 */
+}
+
+/* 예약하기 버튼 호버 효과 */
+.btn-secondary:hover {
+    background-color: white; /* 흰색 배경 */
+    color: #333; /* 어두운 회색 글자 */
+    transform: translateY(-2px); /* 살짝 위로 올리기 */
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4); /* 더 진한 그림자 */
+}
+
+/* 슬라이더 화살표 버튼 */
+.slider-arrow {
+    position: absolute; /* 절대 위치 */
+    top: 50%; /* 세로 가운데 */
+    transform: translateY(-50%); /* 정확한 가운데 정렬 */
+    background: none; /* 배경 없애기 */
+    border: none; /* 테두리 없애기 */
+    color: white; /* 흰색 글자 */
+    font-size: 3rem; /* 글자 크기 */
+    cursor: pointer; /* 마우스 포인터를 손가락 모양으로 */
+    z-index: 20; /* 다른 요소들보다 위에 보이게 */
+    transition: all 0.3s ease; /* 부드러운 변화 효과 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 그림자 효과 */
+}
+
+/* 이전 화살표 */
+.slider-prev {
+    left: 20px; /* 왼쪽에서 20px 떨어진 곳 */
+}
+
+/* 다음 화살표 */
+.slider-next {
+    right: 20px; /* 오른쪽에서 20px 떨어진 곳 */
+}
+
+/* 화살표 호버 효과 */
+.slider-arrow:hover {
+    color: #ff6b35; /* 주황색으로 변경 */
+    transform: translateY(-50%) scale(1.2); /* 살짝 크게 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* 더 진한 그림자 */
+}
+
+/* 슬라이더 인디케이터 (점들) */
+.slider-indicators {
+    position: absolute; /* 절대 위치 */
+    bottom: 30px; /* 아래에서 30px 떨어진 곳 */
+    left: 50%; /* 가로 가운데 */
+    transform: translateX(-50%); /* 정확한 가운데 정렬 */
+    display: flex; /* 가로로 나란히 배치 */
+    gap: 10px; /* 점들 사이 간격 */
+    z-index: 20; /* 다른 요소들보다 위에 보이게 */
+}
+
+/* 개별 인디케이터 점 */
+.indicator {
+    width: 12px; /* 점의 너비 */
+    height: 12px; /* 점의 높이 */
+    border-radius: 50%; /* 원형으로 만들기 */
+    background-color: rgba(255, 255, 255, 0.5); /* 반투명 흰색 */
+    cursor: pointer; /* 마우스 포인터를 손가락 모양으로 */
+    transition: all 0.3s ease; /* 부드러운 변화 효과 */
+}
+
+/* 활성화된 인디케이터 */
+.indicator.active {
+    background-color: white; /* 완전 불투명한 흰색 */
+    transform: scale(1.2); /* 살짝 크게 */
+}
+
+/* 인디케이터 호버 효과 */
+.indicator:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* 더 진한 흰색 */
+    transform: scale(1.1); /* 살짝 크게 */
+}
+
+/* 모바일 화면에서의 반응형 디자인 */
+@media (max-width: 768px) {
+    /* 히어로 섹션 높이 조정 */
+    .hero-section {
+        height: 70vh;
+        margin-top: 60px;
+    }
+    
+    /* 브랜드 이름 크기 줄이기 */
+    .slide-brand {
+        font-size: 2rem;
+    }
+    
+    /* 슬라이드 제목 이미지 조정 */
+    .slide-title {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    /* 슬라이드 설명 크기 줄이기 */
+    .slide-description {
+        font-size: 1.2rem; /* 글자 크기 줄이기 */
+    }
+    
+    /* 버튼 크기 조정 */
+    .btn {
+        padding: 12px 24px; /* 안쪽 여백 줄이기 */
+        font-size: 1rem; /* 글자 크기 줄이기 */
+    }
+    
+    /* 화살표 크기 줄이기 */
+    .slider-arrow {
+        font-size: 2rem; /* 글자 크기 줄이기 */
+    }
+    
+    /* 화살표 위치 조정 */
+    .slider-prev {
+        left: 10px; /* 왼쪽 여백 줄이기 */
+    }
+    
+    .slider-next {
+        right: 10px; /* 오른쪽 여백 줄이기 */
+    }
+    
+    /* 인디케이터 위치 조정 */
+    .slider-indicators {
+        bottom: 20px; /* 아래 여백 줄이기 */
+    }
+    
+    /* 인디케이터 크기 줄이기 */
+    .indicator {
+        width: 10px; /* 점 크기 줄이기 */
+        height: 10px;
+    }
+}
+
+/* 작은 모바일 화면에서의 추가 조정 */
+@media (max-width: 480px) {
+    /* 히어로 섹션 높이 더 줄이기 */
+    .hero-section {
+        height: 60vh;
+        margin-top: 50px;
+    }
+    
+    /* 브랜드 이름 더 작게 */
+    .slide-brand {
+        font-size: 1.5rem;
+    }
+    
+    /* 슬라이드 제목 이미지 조정 */
+    .slide-title {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+    
+    /* 슬라이드 설명 더 작게 */
+    .slide-description {
+        font-size: 1rem;
+    }
+    
+    /* 버튼 더 작게 */
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    /* 화살표 더 작게 */
+    .slider-arrow {
+        font-size: 1.5rem;
+    }
+    
+    /* 인디케이터 더 작게 */
+    .indicator {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+/* 모바일 화면에서의 반응형 디자인 */
+@media (max-width: 768px) {
+    /* 헤더 컨테이너 높이 조정 */
+    .header-container {
+        height: 60px; /* 모바일에서는 높이를 줄이기 */
+        padding: 0 15px; /* 좌우 여백 줄이기 */
+    }
+    
+    /* 브랜드 이름 크기 줄이기 */
+    .brand-name {
+        font-size: 18px; /* 글자 크기 줄이기 */
+    }
+    
+    /* 로고 크기 줄이기 */
+    .logo {
+        width: 40px; /* 로고 크기 줄이기 */
+        height: 40px;
+    }
+    
+    /* 네비게이션 메뉴 숨기기 (모바일에서는 햄버거 메뉴로 대체할 예정) */
+    .header-nav {
+        display: none;
+    }
+    
+    /* 로그인 버튼 크기 조정 */
+    .login-btn {
+        padding: 8px 16px; /* 안쪽 여백 줄이기 */
+        font-size: 14px; /* 글자 크기 줄이기 */
+    }
+    
+    /* 메인 콘텐츠 여백 조정 */
+    main {
+        margin-top: 80px; /* 헤더 높이에 맞춰 여백 조정 */
+    }
+}
+
+/* 작은 모바일 화면에서의 추가 조정 */
+@media (max-width: 480px) {
+    /* 헤더 컨테이너 높이 더 줄이기 */
+    .header-container {
+        height: 50px;
+        padding: 0 10px;
+    }
+    
+    /* 브랜드 이름 더 작게 */
+    .brand-name {
+        font-size: 16px;
+    }
+    
+    /* 로고 더 작게 */
+    .logo {
+        width: 35px;
+        height: 35px;
+    }
+    
+    /* 로그인 버튼 더 작게 */
+    .login-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    
+    /* 메인 콘텐츠 여백 조정 */
+    main {
+        margin-top: 70px;
+    }
+}
+
+/* 브랜드 소개 섹션 스타일 */
+.product-intro-section {
+    width: 100%;
+    background: #fff;
+    padding: 60px 0 40px 0; /* 위아래 여백 */
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.product-intro-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex; /* 가로로 나란히 배치 */
+    align-items: center; /* 세로 가운데 정렬 */
+    gap: 40px; /* 이미지와 텍스트 사이 간격 */
+    flex-wrap: wrap; /* 모바일에서 줄바꿈 */
+    padding: 0 20px;
+}
+
+.intro-image-box {
+    flex: 1 1 300px; /* 이미지 영역 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-image {
+    width: 320px;
+    max-width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.intro-text-box {
+    flex: 2 1 400px; /* 텍스트 영역 */
+    min-width: 260px;
+}
+
+.product-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 18px;
+}
+
+.brand-desc p {
+    font-size: 1.1rem;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.brand-principles {
+    margin: 18px 0 18px 0;
+    padding-left: 18px;
+}
+.brand-principles li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+.brand-bold {
+    font-weight: bold;
+    font-size: 1.15rem;
+    color: #111;
+    margin-top: 18px;
+}
+
+/* 메뉴 섹션 스타일 */
+.product-menu-section {
+    width: 100%;
+    background: #fafafa;
+    padding: 50px 0 60px 0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.menu-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.menu-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 32px;
+    text-align: center;
+}
+.menu-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 6px; /* 세로 24px, 가로 6px 간격 */
+    justify-content: center;
+}
+.menu-item {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    flex: 1 1 320px;
+    max-width: 370px;
+    min-width: 260px;
+    margin: 0 3px; /* 좌우 여백 3px */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 16px 18px 16px;
+}
+.menu-img {
+    width: 100%;
+    max-width: 320px;
+    height: 320px; /* 고정 높이 추가 */
+    object-fit: cover; /* 비율 유지하며 잘라내기 */
+    border-radius: 12px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+.menu-desc h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.menu-desc p strong {
+    font-weight: 700;
+    color: #222;
+    font-size: 1.08em;
+    display: block;
+    margin-bottom: 6px;
+    text-align: center;
+}
+.menu-desc p {
+    font-size: 1rem;
+    color: #333;
+    text-align: left;
+    line-height: 1.6;
+}
+
+/* 반응형: 태블릿 이하에서 한 줄에 2개, 모바일에서 1개 */
+@media (max-width: 900px) {
+    .product-intro-container {
+        flex-direction: column;
+        gap: 24px;
+    }
+    .menu-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .menu-item {
+        max-width: 48%;
+        min-width: 180px;
+    }
+}
+@media (max-width: 600px) {
+    .product-intro-section, .product-menu-section {
+        padding: 30px 0 30px 0;
+    }
+    .product-title, .menu-title {
+        font-size: 1.3rem;
+    }
+    .intro-image {
+        width: 90vw;
+        max-width: 98vw;
+    }
+    .menu-item {
+        max-width: 98vw;
+        min-width: 120px;
+        padding: 12px 4px 10px 4px;
+    }
+    .menu-img {
+        max-width: 98vw;
+    }
+}
+
+/* 만두연구소 섹션 스타일 */
+.mandoo-lab-section {
+    width: 100%;
+    background: #fff;
+    padding: 60px 0 40px 0; /* 위아래 여백 */
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.mandoo-lab-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex; /* 가로로 나란히 배치 */
+    align-items: flex-start; /* 위쪽 정렬 */
+    gap: 40px; /* 이미지와 텍스트 사이 간격 */
+    flex-wrap: wrap; /* 모바일에서 줄바꿈 */
+    padding: 0 20px;
+}
+
+.mandoo-lab-image-box {
+    flex: 1 1 320px; /* 이미지 영역 */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.mandoo-lab-main-img {
+    width: 320px;
+    max-width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.mandoo-lab-desc-box {
+    flex: 2 1 400px; /* 텍스트 영역 */
+    min-width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.mandoo-lab-title-img {
+    width: 220px;
+    max-width: 90vw;
+    margin-bottom: 18px;
+    display: block;
+}
+
+.mandoo-lab-subtitle {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 18px;
+}
+
+.mandoo-lab-body {
+    font-size: 1.08rem;
+    color: #333;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+}
+
+/* 반응형: 태블릿 이하에서 한 줄에 세로 배치, 이미지 크기 줄이기 */
+@media (max-width: 900px) {
+    .mandoo-lab-container {
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+    }
+    .mandoo-lab-main-img {
+        width: 220px;
+    }
+    .mandoo-lab-title-img {
+        width: 160px;
+    }
+}
+@media (max-width: 600px) {
+    .mandoo-lab-section {
+        padding: 30px 0 30px 0;
+    }
+    .mandoo-lab-main-img {
+        width: 90vw;
+        max-width: 98vw;
+    }
+    .mandoo-lab-title-img {
+        width: 120px;
+    }
+    .mandoo-lab-desc-box {
+        min-width: 120px;
+    }
+    .mandoo-lab-body {
+        font-size: 0.98rem;
+    }
+}
+
+/* 히어로 섹션 좌측 상단 작은 이미지 */
+.hero-corner-img {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    width: 144px;
+    height: auto;
+    z-index: 30;
+    opacity: 0.85;
+}
+
+/* 매장안내 섹션 스타일 */
+.location-section {
+    width: 100%;
+    background: #fafafa;
+    padding: 60px 0 40px 0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.location-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.location-intro {
+    margin-bottom: 40px;
+    text-align: center;
+}
+.location-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 18px;
+}
+.location-desc {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.7;
+}
+.location-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 6px;
+    justify-content: center;
+}
+.location-floor {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    flex: 1 1 320px;
+    max-width: 370px;
+    min-width: 260px;
+    margin: 0 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 16px 18px 16px;
+}
+.location-img {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+.floor-desc {
+    width: 100%;
+}
+.floor-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #111;
+    margin: 12px 0 4px 0;
+}
+.floor-text {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+@media (max-width: 900px) {
+    .location-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .location-floor {
+        max-width: 48%;
+        min-width: 180px;
+    }
+}
+@media (max-width: 600px) {
+    .location-section {
+        padding: 30px 0 30px 0;
+    }
+    .location-title {
+        font-size: 1.3rem;
+    }
+    .location-floor {
+        max-width: 98vw;
+        min-width: 120px;
+        padding: 12px 4px 10px 4px;
+    }
+    .location-img {
+        max-width: 98vw;
+    }
+}
+
+/* 매장위치 섹션 스타일 */
+.store-map-section {
+    width: 100%;
+    background: #fff;
+    padding: 40px 0 40px 0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.store-map-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.map-embed-box {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    margin-bottom: 18px;
+}
+.map-embed-box iframe {
+    width: 100%;
+    min-height: 320px;
+    border: none;
+    display: block;
+}
+.store-address {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #222;
+    font-weight: 700;
+    margin-top: 10px;
+}
+.store-map-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 18px;
+}
+@media (max-width: 600px) {
+    .store-map-section {
+        padding: 20px 0 20px 0;
+    }
+    .map-embed-box iframe {
+        min-height: 180px;
+    }
+    .store-address {
+        font-size: 1rem;
+    }
+    .store-map-title {
+        font-size: 1.3rem;
+    }
+}
+
+/* =====================
+   푸터 스타일
+   ===================== */
+.footer {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #222;
+    color: #fff;
+    padding: 40px 0 20px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+.footer-links {
+    margin-bottom: 16px;
+    font-size: 1.1rem;
+}
+.footer-link {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 4px;
+    transition: color 0.2s;
+}
+.footer-link:hover {
+    color: #ffb300;
+}
+.footer-info {
+    margin-bottom: 18px;
+    font-size: 0.98rem;
+    line-height: 1.7;
+}
+.footer-bold {
+    font-weight: 700;
+}
+.footer-social {
+    margin: 18px 0 12px 0;
+}
+.social-icon {
+    color: #fff;
+    font-size: 1.7rem;
+    margin: 0 10px;
+    display: inline-block;
+    transition: color 0.2s, transform 0.2s;
+    vertical-align: middle;
+}
+.social-icon:hover {
+    color: #ffb300;
+    transform: scale(1.15);
+}
+.footer-copyright {
+    font-size: 0.95rem;
+    color: #bbb;
+    margin-top: 10px;
+}
+@media (max-width: 600px) {
+    .footer {
+        padding: 28px 0 12px 0;
+        font-size: 0.95rem;
+    }
+    .footer-info {
+        font-size: 0.92rem;
+    }
+    .footer-social {
+        font-size: 1.3rem;
+    }
+}
+/* Font Awesome 아이콘 CDN 안내: <head>에 링크 필요 */
+
+/* =====================
+   좌측 하단 고정 챗봇 버튼
+   ===================== */
+.chatbot-fixed-link {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #222;
+    color: #fff;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.08rem;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.chatbot-fixed-link i {
+    font-size: 1.3em;
+}
+.chatbot-fixed-link:hover {
+    background: #ffb300;
+    color: #222;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+    transform: translateY(-2px) scale(1.04);
+}
+@media (max-width: 600px) {
+    .chatbot-fixed-link {
+        right: 10px;
+        bottom: 10px;
+        padding: 9px 14px;
+        font-size: 0.98rem;
+    }
+    .chatbot-fixed-link i {
+        font-size: 1.1em;
+    }
+}
+
+.framed-image {
+  display: block;
+  margin: 32px auto;
+  padding: 24px;
+  background: #fff;
+  border: 3px solid #222;
+  border-radius: 32px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  max-width: 90%;
+  box-sizing: border-box;
+}
+
+/* =====================
+   리뷰 섹션 스타일
+   ===================== */
+.review-section {
+    width: 100%; /* 전체 너비 */
+    background: #fff; /* 배경색 흰색 */
+    padding: 50px 0 40px 0; /* 위아래 여백 */
+    font-family: 'Noto Sans KR', sans-serif; /* 넥슨폰트 사용 */
+}
+
+.review-container {
+    max-width: 1100px; /* 최대 너비 */
+    margin: 0 auto; /* 가운데 정렬 */
+    padding: 0 20px; /* 좌우 여백 */
+}
+
+.review-title {
+    font-size: 2rem; /* 큰 글씨 */
+    font-weight: 700; /* 굵은 글씨 */
+    color: #222; /* 진한 회색 */
+    text-align: center; /* 가운데 정렬 */
+    margin-bottom: 32px; /* 아래 여백 */
+}
+
+.review-grid {
+    display: grid; /* 그리드로 배치 */
+    grid-template-columns: repeat(3, 1fr); /* 3열 */
+    grid-template-rows: repeat(2, auto); /* 2행 */
+    gap: 28px 18px; /* 세로 28px, 가로 18px 간격 */
+    justify-items: center; /* 각 박스 가운데 정렬 */
+}
+
+.review-box {
+    background: #fafafa; /* 연한 회색 배경 */
+    border-radius: 16px; /* 둥근 모서리 */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06); /* 그림자 */
+    width: 100%; /* 가로 100% */
+    max-width: 320px; /* 최대 너비 */
+    min-width: 180px; /* 최소 너비 */
+    padding: 24px 16px 18px 16px; /* 안쪽 여백 */
+    display: flex; /* 세로로 배치 */
+    flex-direction: column;
+    align-items: center; /* 가운데 정렬 */
+    text-align: center; /* 텍스트 가운데 */
+}
+
+.review-stars {
+    color: #ffb400; /* 별 색상(노란색) */
+    font-size: 1.3rem; /* 별 크기 */
+    margin-bottom: 10px; /* 아래 여백 */
+    letter-spacing: 2px; /* 별 간격 */
+}
+
+.review-text {
+    font-size: 1.05rem; /* 후기 글씨 크기 */
+    color: #333; /* 글자색 */
+    margin-bottom: 12px; /* 아래 여백 */
+    line-height: 1.6; /* 줄간격 */
+    word-break: keep-all; /* 단어 단위 줄바꿈 */
+}
+
+.review-user {
+    font-size: 0.98rem; /* 이름 글씨 크기 */
+    color: #888; /* 연한 회색 */
+    font-style: italic; /* 이탤릭체 */
+}
+
+/* 반응형: 태블릿 이하에서 2열, 모바일에서 1열 */
+@media (max-width: 900px) {
+    .review-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2열 */
+    }
+}
+@media (max-width: 600px) {
+    .review-section {
+        padding: 30px 0 30px 0; /* 여백 줄이기 */
+    }
+    .review-title {
+        font-size: 1.3rem;
+    }
+    .review-grid {
+        grid-template-columns: 1fr; /* 1열 */
+        gap: 18px 0;
+    }
+    .review-box {
+        max-width: 98vw;
+        min-width: 120px;
+        padding: 12px 4px 10px 4px;
+    }
+}
+
+/* 간결한 푸터 스타일 */
+.footer-simple-container {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    background: #333;
+    color: #fff;
+    padding: 18px 0 12px 0;
+    gap: 18px;
+}
+.footer-logo {
+    max-height: 90px;
+    border-radius: 9px;
+    padding: 2px;
+}
+.footer-main-info {
+    gap: 9px;
+    font-size: 1rem;
+    min-width: 170px;
+    max-width: 300px;
+}
+.footer-brand {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 1px;
+}
+.footer-contact, .footer-address {
+    font-size: 0.75rem;
+    margin-bottom: 1px;
+}
+.footer-copyright {
+    font-size: 0.55rem;
+    margin: 4px 0 2px 0;
+    color: #ccc;
+}
+@media (max-width: 900px) {
+    .footer-simple-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 9px;
+        padding: 12px 0 8px 0;
+    }
+    .footer-main-info {
+        font-size: 0.55rem;
+        min-width: unset;
+        max-width: 98vw;
+    }
+    .footer-logo {
+        max-height: 60px;
+    }
+}
+
+/* 로그인 모달 스타일 */
+.login-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.45);
+    justify-content: center;
+    align-items: center;
+}
+.login-modal.show {
+    display: flex;
+}
+.login-modal-content {
+    background: #fff;
+    border-radius: 18px;
+    padding: 36px 32px 28px 32px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+    min-width: 320px;
+    max-width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.login-modal-close {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    font-size: 2rem;
+    color: #888;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+.login-modal-close:hover {
+    color: #ff6b35;
+}
+.login-form {
+    display: flex;
+    flex-direction: column;
+    width: 260px;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+.login-form label {
+    font-size: 1rem;
+    color: #222;
+    margin-bottom: 2px;
+    margin-top: 8px;
+}
+.login-form input {
+    padding: 10px 12px;
+    border: 1.5px solid #bbb;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s;
+}
+.login-form input:focus {
+    border: 1.5px solid #ff6b35;
+}
+.login-submit-btn {
+    background: #ff6b35;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.login-submit-btn:hover {
+    background: #e55a2b;
+}
+.login-modal-links {
+    margin-top: 8px;
+    font-size: 0.98rem;
+    color: #666;
+    text-align: center;
+}
+.login-modal-links a {
+    color: #ff6b35;
+    text-decoration: none;
+    margin: 0 4px;
+    transition: text-decoration 0.2s;
+}
+.login-modal-links a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 600px) {
+    .login-modal-content {
+        min-width: 90vw;
+        padding: 18px 6vw 18px 6vw;
+    }
+    .login-form {
+        width: 100%;
+    }
+}
+
+/* 모바일 햄버거 메뉴 버튼 */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-left: 12px;
+  padding: 4px 10px;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+.mobile-menu-btn:active, .mobile-menu-btn:focus {
+  background: #f0f0f0;
+}
+.hamburger-icon {
+  display: inline-block;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+/* 모바일 메뉴 */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100vw;
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  z-index: 2000;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  padding: 0 0 10px 0;
+  animation: slideDown 0.25s;
+}
+.mobile-nav.show {
+  display: flex;
+}
+.mobile-nav-link {
+  padding: 18px 0 12px 0;
+  text-align: center;
+  color: #222;
+  text-decoration: none;
+  font-size: 1.15rem;
+  border-bottom: 1px solid #eee;
+  transition: background 0.2s;
+}
+.mobile-nav-link:last-child {
+  border-bottom: none;
+}
+.mobile-nav-link:active, .mobile-nav-link:focus {
+  background: #f5f5f5;
+}
+@keyframes slideDown {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* 미디어 쿼리: 모바일에서만 햄버거/모바일 메뉴 보이기 */
+@media (max-width: 768px) {
+  .header-nav {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: inline-block;
+  }
+  .mobile-nav {
+    display: none;
+  }
+  .mobile-nav.show {
+    display: flex;
+  }
+} 

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>해 율 만 두 전 골</title>
+    
+    <!-- 넥슨폰트 웹폰트 가져오기 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap">
+    <!-- Font Awesome 아이콘 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- 우리가 만든 CSS 파일 연결하기 -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 헤더 부분 - 웹사이트 맨 위에 있는 메뉴바 -->
+    <header class="header" id="header-guide">
+        <!-- 헤더 안의 내용을 담는 컨테이너 -->
+        <div class="header-container">
+            <!-- 왼쪽 부분: 로고와 브랜드 이름 -->
+            <div class="header-left">
+                <!-- 로고 이미지 -->
+                <a href="#header-guide">
+                    <img src="images/image_09.jpg.png" alt="해율만두전골 로고" class="logo">
+                </a>
+                <!-- 브랜드 타이틀 이미지 -->
+                <a href="#header-guide">
+                    <img src="images/image_16.jpg" alt="해율만두전골" class="brand-title-image">
+                </a>
+            </div>
+            
+            <!-- 가운데 부분: 메뉴들 -->
+            <nav class="header-nav">
+                <a href="#brand-intro" class="nav-link">해율소개</a>
+                <a href="#menu-intro" class="nav-link">메뉴</a>
+                <a href="#mandoo-lab" class="nav-link">만두연구소</a>
+                <a href="#location" class="nav-link">매장안내</a>
+                <a href="https://smartstore.naver.com/" class="nav-link" target="_blank" rel="noopener">쇼핑몰</a>
+            </nav>
+            
+            <!-- 오른쪽 부분: 로그인 버튼 -->
+            <div class="header-right">
+                <!-- 로그인 버튼 -->
+                <button class="login-btn">로그인</button>
+                <!-- 모바일 햄버거 메뉴 버튼 -->
+                <button class="mobile-menu-btn" aria-label="모바일 메뉴 열기">
+                  <span class="hamburger-icon">&#9776;</span>
+                </button>
+            </div>
+        </div>
+        <!-- 모바일 전용 메뉴 -->
+        <nav class="mobile-nav">
+          <a href="#brand-intro" class="mobile-nav-link">해윰소개</a>
+          <a href="#menu-intro" class="mobile-nav-link">메뉴</a>
+          <a href="#mandoo-lab" class="mobile-nav-link">만두연구소</a>
+          <a href="#location" class="mobile-nav-link">매장안내</a>
+          <a href="https://smartstore.naver.com/" class="mobile-nav-link" target="_blank" rel="noopener">쇼핑몰</a>
+        </nav>
+    </header>
+
+    <!-- 히어로 섹션 - 메인 배너 슬라이더 -->
+    <section class="hero-section">
+        <!-- 좌측 상단 작은 이미지 -->
+        <img src="images/image_19.png" alt="히어로 좌측상단 장식" class="hero-corner-img">
+        <!-- 슬라이더 컨테이너 -->
+        <div class="hero-slider">
+            <!-- 첫 번째 슬라이드 -->
+            <div class="slide active">
+                <img src="images/image_02.jpg" alt="해율만두전골 슬라이드 1" class="slide-image">
+                <div class="slide-content">
+                    <h2 class="slide-brand">해율만두전골</h2>
+                    <h3 class="slide-title">자연의 흐름을 맛으로 전하다.</h3>
+                    <div class="slide-buttons">
+                        <button class="btn btn-secondary">예약하기</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 두 번째 슬라이드 -->
+            <div class="slide">
+                <img src="images/image_10.png" alt="해율만두전골 슬라이드 2" class="slide-image">
+                <div class="slide-content">
+                    <h2 class="slide-brand">해율만두전골</h2>
+                    <h3 class="slide-title">자연의 흐름을 맛으로 전하다.</h3>
+                    <div class="slide-buttons">
+                        <button class="btn btn-secondary">예약하기</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 세 번째 슬라이드 -->
+            <div class="slide">
+                <img src="images/image_11.png" alt="해율만두전골 슬라이드 3" class="slide-image">
+                <div class="slide-content">
+                    <h2 class="slide-brand">해율만두전골</h2>
+                    <h3 class="slide-title">자연의 흐름을 맛으로 전하다.</h3>
+                    <div class="slide-buttons">
+                        <button class="btn btn-secondary">예약하기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 좌우 화살표 버튼 -->
+        <button class="slider-arrow slider-prev">&lt;</button>
+        <button class="slider-arrow slider-next">&gt;</button>
+        
+        <!-- 슬라이더 인디케이터 (점들) -->
+        <div class="slider-indicators">
+            <span class="indicator active" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+            <span class="indicator" data-slide="2"></span>
+        </div>
+    </section>
+
+    <!-- 1. 해율브랜드소개 -->
+    <section class="product-intro-section" id="brand-intro">
+        <div class="product-intro-container">
+            <!-- 왼쪽: 대표 이미지 -->
+            <div class="intro-image-box">
+                <img src="images/image_15.png.png" alt="해율 대표 이미지" class="intro-image">
+            </div>
+            <!-- 오른쪽: 브랜드 소개글 -->
+            <div class="intro-text-box">
+                <h1 class="product-title">해율브랜드소개</h1>
+                <div class="brand-desc">
+                    <p><b>해율 (Haeyul)</b> : '해(태양)' + '율(법칙, 리듬)'</p>
+                    <p><b>철학:</b> 자연의 순리를 따르고, 음식 본연의 리듬과 질서를 지키는 건강한 맛의 구현</p>
+                    <p><b>슬로건:</b> "자연의 흐름을 맛으로 전하다 - 자연진미 해율만두전골"<br>
+                    자연의 순리를 따르고, 재료 본연의 맛을 살린 해율만의 만두전골</p>
+                    <ul class="brand-principles">
+                        <li><b>자연의 리듬</b><br>계절과 재료의 흐름에 따라 음식을 준비<br>24절기, 사계절 색채를 음식에 반영 (컬러 만두, 계절 만두 등)</li>
+                        <li><b>저속노화</b><br>몸을 천천히 따뜻하게 해주는 음식<br>소화가 잘 되고 편안한 조리 방식 지향</li>
+                        <li><b>혈액 건강</b><br>과하지 않은 간과 기름<br>버섯, 미역, 야채 등 건강한 재료 중심</li>
+                    </ul>
+                    <p class="brand-bold">해율은 자연의 시간과 법칙을 따르며,<br>그 흐름을 한 상 가득 담아 고객에게 전하는 브랜드입니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. 해율의 메뉴 -->
+    <section class="product-menu-section" id="menu-intro">
+        <div class="menu-container">
+            <h1 class="menu-title">해율의 메뉴</h1>
+            <div class="menu-grid">
+                <!-- 메뉴 1 -->
+                <div class="menu-item">
+                    <img src="images/image_03.jpg" alt="해율 진미전골" class="menu-img">
+                    <div class="menu-desc">
+                        <h2>해율 진미전골</h2>
+                        <p><strong>자연을 더한 깊은 풍미, 버섯 가득한 건강 전골</strong><br>자연연전골에 다양한 향긋한 버섯을 더해 산과 들의 생기를 담았습니다.<br>몸과 마음을 동시에 따뜻하게 하는 자연의 보양식입니다.</p>
+                    </div>
+                </div>
+                <!-- 메뉴 2 -->
+                <div class="menu-item">
+                    <img src="images/image_12.png" alt="해율 자연전골" class="menu-img">
+                    <div class="menu-desc">
+                        <h2>해율 자연전골</h2>
+                        <p><strong>자연의 순리로 끓인 만두전골</strong><br>신선한 제철 채소, 정성껏 빚은 굴림만두<br>담백하고 깔끔한 국물에서 재료 본연의 깊은 맛을 느껴보세요.</p>
+                    </div>
+                </div>
+                <!-- 메뉴 3 -->
+                <div class="menu-item">
+                    <img src="images/image_13.png" alt="해율 프리미엄전골" class="menu-img">
+                    <div class="menu-desc">
+                        <h2>해율 프리미엄전골</h2>
+                        <p><strong>프리미엄 한우와 자연의 조화, 정성 가득한 진미</strong><br>깊고 진한 국물에 국내산 한우와 싱그러운 채소, 굴림만두가 어우러진 최고급 전골.<br>소중한 분들과의 특별한 식사에 어울리는 해율의 시그니처 메뉴입니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. 만두연구소 -->
+    <section class="mandoo-lab-section" id="mandoo-lab">
+        <!-- 전체를 감싸는 컨테이너 -->
+        <div class="mandoo-lab-container">
+            <!-- 왼쪽: 만두연구소 대표 이미지 -->
+            <div class="mandoo-lab-image-box">
+                <!-- 만두연구소를 상징하는 이미지 -->
+                <img src="images/image_10.png" alt="만두연구소 대표 이미지" class="mandoo-lab-main-img">
+            </div>
+            <!-- 오른쪽: 설명 영역 -->
+            <div class="mandoo-lab-desc-box">
+                <!-- 설명란 상단에 제목 이미지 -->
+                <img src="images/image_17.jpg" alt="만두연구소 제목 이미지" class="mandoo-lab-title-img">
+                <!-- 부제목 (굵게) -->
+                <div class="mandoo-lab-subtitle">
+                    정성의 시간과 자연의 이치를 담아, 한 알의 만두에 철학을 빚습니다.
+                </div>
+                <!-- 본문 내용 -->
+                <div class="mandoo-lab-body">
+                    해율의 만두연구소는 단순한 조리 공간이 아닙니다.<br>
+                    자연의 순리를 따르고 재료 본연의 맛을 존중하는 해율의 철학이 시작되는 곳입니다.<br>
+                    유리 너머로 보이는 이곳에서는 매일 아침,<br>
+                    신선한 채소와 고기, 제철 재료로 굴려내는 굴림만두가 정성껏 만들어집니다.<br>
+                    밀가루 대신 최소한의 전분으로 감싸 자연의 결을 살린 해율의 만두는<br>
+                    속이 꽉 차면서도, 속이 편안한 깊은 맛을 자랑합니다.<br>
+                    계절의 변화에 따라 새로운 만두를 실험하고,<br>
+                    색과 식감, 영양의 균형을 연구하며<br>
+                    언제나 '더 나은 한 그릇'을 고민하는 이 작은 공간은<br>
+                    해율만두전골의 모든 메뉴가 시작되는 '맛의 실험실'입니다.<br>
+                    당신이 마주한 한 그릇의 만두전골,<br>
+                    그 뿌리는 바로 이곳, 해율 만두연구소에 있습니다.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 자연과 공간이 만나는 곳, 해율만두전골 -->
+    <section class="location-section" id="location">
+        <!-- 전체를 감싸는 컨테이너 -->
+        <div class="location-container">
+            <!-- 상단 안내글 -->
+            <div class="location-intro">
+                <div class="location-title"><strong>자연과 공간이 만나는 곳, 해율만두전골</strong></div>
+                <div class="location-desc">
+                    해율만두전골은 자연의 흐름을 담은 공간 안에서, 정성을 다한 한 끼를 경험할 수 있도록 세심하게 설계되었습니다.<br>
+                    고객의 입장에서 동선 하나까지 고민한 공간 구성, 음식의 철학을 담은 주방과 홀, 기다림마저 따뜻한 대기 공간까지<br>
+                    해율은 단순한 식당이 아니라 하나의 음식 여정입니다.
+                </div>
+            </div>
+            <!-- 층별 안내 그리드 -->
+            <div class="location-grid">
+                <!-- 1층 -->
+                <div class="location-floor">
+                    <img src="images/image_20.png" alt="1층 이미지" class="location-img">
+                    <div class="floor-desc">
+                        <div class="floor-title"><strong>[1층] 환영의 공간, 해율의 시작</strong></div>
+                        <div class="floor-text">만두 찜 주방 & 판매대<br>직접 만든 굴림만두를 찌는 모습이 보이는 공간입니다.<br>따끈한 만두의 향기가 해율의 첫인사를 대신합니다.</div>
+                        <div class="floor-title"><strong>만두연구소</strong></div>
+                        <div class="floor-text">유리창 너머로 보이는 연구소에서는 계절 재료와 건강한 조화를 연구합니다.<br>손님이 대기하거나 휴식하는 동안, 해율의 철학을 눈으로 경험할 수 있습니다.</div>
+                        <div class="floor-title"><strong>로비 & 대기공간</strong></div>
+                        <div class="floor-text">로비에 들어서면 대기 등록 후, 메뉴를 선택하고 잠시 여유를 즐길 수 있는 공간이 마련되어 있습니다.<br>자연 소재의 인테리어와 차분한 음악이 마음까지 편안하게 합니다.</div>
+                    </div>
+                </div>
+                <!-- 2층 -->
+                <div class="location-floor">
+                    <img src="images/image_21.png" alt="2층 이미지" class="location-img">
+                    <div class="floor-desc">
+                        <div class="floor-title"><strong>[2층] 푸르름과 맛이 머무는 메인홀</strong></div>
+                        <div class="floor-text">전면 유리창으로 펼쳐지는 나무 풍경<br>해율 2층은 앞·뒤·옆이 모두 탁 트인 자연 속 풍경으로 감싸여 있습니다.<br>천정고 4.5미터의 높은 공간감은 도심 속에서 누릴 수 있는 특별한 여유입니다.</div>
+                        <div class="floor-title"><strong>오픈 주방 & 셀프 카운터</strong></div>
+                        <div class="floor-text">손님이 들어오면 먼저 보이는 오픈주방. 준비하는 모습을 직접 보고, 직원의 안내를 받아 자리에 앉습니다.<br>기본 반찬은 정갈하게 준비해 바로 제공됩니다.</div>
+                        <div class="floor-title"><strong>총 37개 테이블, 룸 없이 열린 구조</strong></div>
+                        <div class="floor-text">가족, 친구, 혼밥 손님까지 누구나 편안하게 머물 수 있는 열린 홀 구조로 구성되어 있습니다.</div>
+                    </div>
+                </div>
+                <!-- 3층 -->
+                <div class="location-floor">
+                    <img src="images/image_22.png" alt="3층 이미지" class="location-img">
+                    <div class="floor-desc">
+                        <div class="floor-title"><strong>[3층] 프라이빗 & 단체를 위한 예약층</strong></div>
+                        <div class="floor-text">예약제 운영 / 단체 모임 전용<br>조용한 모임이나 특별한 날을 위한 공간입니다.<br>공간은 25인 테이블 룸과 40인 테이블 룸으로 나뉘며, 필요시 하나의 큰 룸으로 연결 가능합니다.</div>
+                        <div class="floor-title"><strong>모임의 품격을 높이는 프라이빗 공간</strong></div>
+                        <div class="floor-text">소규모 돌잔치, 가족 모임, 사내 회식 등 다양한 목적의 단체 손님을 위한 따뜻하고 고급스러운 공간입니다.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 고객후기 -->
+    <section class="review-section" id="review-section">
+        <!-- 리뷰 전체를 감싸는 컨테이너 -->
+        <div class="review-container">
+            <!-- 리뷰 타이틀 -->
+            <h1 class="review-title">고객 후기</h1>
+            <!-- 3x2 그리드로 6개 리뷰 박스 -->
+            <div class="review-grid">
+                <!-- 리뷰 1 -->
+                <div class="review-box">
+                    <!-- 별점 5개 -->
+                    <div class="review-stars">★★★★★</div>
+                    <!-- 후기 내용 -->
+                    <div class="review-text">만두가 정말 쫄깃쫄깃하고 국물이 깊어요!<br>가족 모두가 맛있게 먹었어요.<br>다음에 또 오고 싶어요.</div>
+                    <!-- 고객명 -->
+                    <div class="review-user">- 김지현</div>
+                </div>
+                <!-- 리뷰 2 -->
+                <div class="review-box">
+                    <div class="review-stars">★★★★★</div>
+                    <div class="review-text">채소가 신선해서 건강한 느낌이에요.<br>아이들도 잘 먹어서 기뻤어요.<br>친절한 서비스도 최고!</div>
+                    <div class="review-user">- 이수민</div>
+                </div>
+                <!-- 리뷰 3 -->
+                <div class="review-box">
+                    <div class="review-stars">★★★★★</div>
+                    <div class="review-text">매장이 깨끗하고 분위기가 좋아요.<br>만두전골이 정말 특별했어요.<br>친구들과 좋은 시간 보냈어요.</div>
+                    <div class="review-user">- 박준호</div>
+                </div>
+                <!-- 리뷰 4 -->
+                <div class="review-box">
+                    <div class="review-stars">★★★★★</div>
+                    <div class="review-text">국물이 진하고 만두가 가득해요.<br>양도 많고 가격도 괜찮아요.<br>재방문 의사 100%입니다!</div>
+                    <div class="review-user">- 정예린</div>
+                </div>
+                <!-- 리뷰 5 -->
+                <div class="review-box">
+                    <div class="review-stars">★★★★★</div>
+                    <div class="review-text">자연의 맛이 느껴져서 좋아요.<br>부모님도 만족하셨어요.<br>다음엔 단체로 오고 싶어요.</div>
+                    <div class="review-user">- 송민재</div>
+                </div>
+                <!-- 리뷰 6 -->
+                <div class="review-box">
+                    <div class="review-stars">★★★★★</div>
+                    <div class="review-text">직원분들이 친절해서 기분이 좋았어요.<br>음식이 빨리 나와서 좋았고<br>아이들과 함께 오기 딱이에요.</div>
+                    <div class="review-user">- 한지우</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. 매장위치 -->
+    <section class="store-map-section" id="store-map">
+        <!-- 전체를 감싸는 컨테이너 -->
+        <div class="store-map-container">
+            <!-- 상단 중앙 제목 -->
+            <div class="store-map-title"><strong>매장위치</strong></div>
+            <!-- 네이버 지도 iframe (좌우로 꽉차게) -->
+            <div class="map-embed-box">
+                <!-- 네이버 지도에서 해당 주소로 생성한 지도 embed -->
+                <iframe 
+                    src="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%9A%A9%EC%9D%B8%EC%8B%9C%20%EC%88%98%EC%A7%80%EA%B5%AC%20%EA%B3%A0%EA%B8%B0%EB%A1%9C%20173%EB%B2%88%EA%B8%B8%205" 
+                    width="100%" 
+                    height="400" 
+                    frameborder="0" 
+                    style="border:0; max-width: 100%; min-height: 300px;" 
+                    allowfullscreen="" 
+                    referrerpolicy="no-referrer-when-downgrade" 
+                    title="해율만두전골 위치"
+                    loading="lazy">
+                </iframe>
+            </div>
+            <!-- 매장 주소 -->
+            <div class="store-address">
+                <strong>경기도 용인시 수지구 고기로 173번길 5</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- 로그인 모달(숨김) -->
+    <div id="login-modal" class="login-modal" style="display:none;">
+        <div class="login-modal-content">
+            <span class="login-modal-close" id="login-modal-close">&times;</span>
+            <h2>로그인</h2>
+            <form class="login-form">
+                <label for="login-email">이메일</label>
+                <input type="email" id="login-email" name="email" placeholder="이메일 입력" required>
+                <label for="login-password">비밀번호</label>
+                <input type="password" id="login-password" name="password" placeholder="비밀번호 입력" required>
+                <button type="submit" class="login-submit-btn">로그인</button>
+            </form>
+            <div class="login-modal-links">
+                <a href="#" id="find-password-link">비밀번호 찾기</a> |
+                <a href="#" id="signup-link">회원가입</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 우리가 만든 JavaScript 파일 연결하기 -->
+    <script src="script.js"></script>
+
+    <!-- 푸터 영역 시작 -->
+    <footer class="footer">
+        <div class="footer-simple-container">
+            <!-- 좌측: 브랜드 이미지 -->
+            <div class="footer-left">
+                <img src="images/image_14.png" alt="해율푸드 로고" class="footer-logo">
+            </div>
+            <!-- 우측: 간결한 정보 -->
+            <div class="footer-main-info">
+                <div class="footer-brand">해율푸드</div>
+                <div class="footer-contact">031-265-3651</div>
+                <div class="footer-address">경기도 용인시 수지구 고기로 173번길 5</div>
+                <div class="footer-copyright">COPYRIGHT 해율푸드. ALL RIGHTS RESERVED</div>
+                <!-- 소셜 미디어 로고 및 링크 -->
+                <div class="footer-social">
+                    <a href="https://instagram.com" target="_blank" class="social-icon" aria-label="인스타그램"><i class="fab fa-instagram"></i></a>
+                    <a href="https://facebook.com" target="_blank" class="social-icon" aria-label="페이스북"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://youtube.com" target="_blank" class="social-icon" aria-label="유튜브"><i class="fab fa-youtube"></i></a>
+                    <a href="https://blog.naver.com" target="_blank" class="social-icon" aria-label="블로그"><i class="fas fa-blog"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- 푸터 영역 끝 -->
+
+    <!-- 좌측 하단 고정 챗봇 버튼 -->
+    <a href="https://chatgpt.com/g/g-68417276b33c819193345bb830488cca-haeyulaicaesbos" class="chatbot-fixed-link" target="_blank" aria-label="해율AI챗봇">
+        <i class="fas fa-comments"></i> 해율AI챗봇
+    </a>
+</body>
+</html> 

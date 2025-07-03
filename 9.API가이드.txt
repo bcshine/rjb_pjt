@@ -1,0 +1,8 @@
+이 홈페이지를 깃허브로 배포하려 한다.  
+api key 가 노출되면 안되니, gitignire 형식으로 만들어다오.
+실행 배포 하다보면, 웹에서는 되고, 모바일에서는 안되는 경우가 많다.
+모바일 중심의 웹앱이니, 모바일에서 잘 운영되게 코드를 짠다.
+
+사용할  외부 api key
+Gemini api key : AIzaSyC8jH0pRZlmejMMv0V2hItxhf_EIZqaGi0
+사용모델 : Gemini 1.5 flash
