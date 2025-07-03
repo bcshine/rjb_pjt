@@ -1,3 +1,84 @@
+// PWA Service Worker 등록
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+                console.log('Service Worker 등록 성공:', registration.scope);
+                
+                // 새로운 서비스워커가 설치되면 알림
+                registration.addEventListener('updatefound', function() {
+                    const newWorker = registration.installing;
+                    newWorker.addEventListener('statechange', function() {
+                        if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                            // 새 버전이 사용 가능함을 사용자에게 알림
+                            if (confirm('새로운 버전이 사용 가능합니다. 새로고침 하시겠습니까?')) {
+                                window.location.reload();
+                            }
+                        }
+                    });
+                });
+            })
+            .catch(function(error) {
+                console.log('Service Worker 등록 실패:', error);
+            });
+    });
+}
+
+// PWA 설치 유도 기능
+let deferredPrompt;
+const installButton = document.createElement('button');
+installButton.textContent = '앱 설치하기';
+installButton.style.cssText = `
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: linear-gradient(135deg, #03c75a 0%, #02b350 100%);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(3, 199, 90, 0.4);
+    z-index: 1001;
+    display: none;
+    transition: all 0.3s ease;
+`;
+
+// PWA 설치 가능 이벤트 리스너
+window.addEventListener('beforeinstallprompt', function(e) {
+    console.log('PWA 설치 가능');
+    e.preventDefault();
+    deferredPrompt = e;
+    
+    // 설치 버튼 표시
+    document.body.appendChild(installButton);
+    installButton.style.display = 'block';
+});
+
+// 설치 버튼 클릭 이벤트
+installButton.addEventListener('click', function() {
+    if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then(function(choiceResult) {
+            if (choiceResult.outcome === 'accepted') {
+                console.log('사용자가 PWA 설치를 승인했습니다');
+            } else {
+                console.log('사용자가 PWA 설치를 거부했습니다');
+            }
+            deferredPrompt = null;
+            installButton.style.display = 'none';
+        });
+    }
+});
+
+// 앱이 설치되면 설치 버튼 숨기기
+window.addEventListener('appinstalled', function() {
+    console.log('PWA가 성공적으로 설치되었습니다');
+    installButton.style.display = 'none';
+});
+
 // 웹페이지가 완전히 로드된 후에 실행되는 코드
 document.addEventListener('DOMContentLoaded', function() {
     console.log('헤더가 성공적으로 로드되었습니다!');
@@ -70,43 +151,49 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // 모바일에서 햄버거 메뉴 기능 (향후 확장용)
-    function createMobileMenu() {
-        // 모바일 화면에서만 실행되는 코드
-        if (window.innerWidth <= 768) {
-            console.log('모바일 화면에서 실행 중입니다.');
+    // 모바일 햄버거 메뉴 기능
+    function initMobileMenu() {
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileNav = document.querySelector('.mobile-nav');
+        
+        if (mobileMenuBtn && mobileNav) {
+            mobileMenuBtn.addEventListener('click', function() {
+                console.log('모바일 메뉴 버튼 클릭됨');
+                
+                // 모바일 네비게이션 토글
+                if (mobileNav.classList.contains('show')) {
+                    mobileNav.classList.remove('show');
+                    console.log('모바일 메뉴 닫힘');
+                } else {
+                    mobileNav.classList.add('show');
+                    console.log('모바일 메뉴 열림');
+                }
+            });
             
-            // 모바일 메뉴 버튼이 없으면 만들기
-            if (!document.querySelector('.mobile-menu-btn')) {
-                const mobileMenuBtn = document.createElement('button');
-                mobileMenuBtn.className = 'mobile-menu-btn';
-                mobileMenuBtn.innerHTML = '☰'; // 햄버거 메뉴 아이콘
-                mobileMenuBtn.style.cssText = `
-                    background: none;
-                    border: none;
-                    font-size: 24px;
-                    cursor: pointer;
-                    padding: 5px;
-                    margin-left: 10px;
-                `;
-                
-                // 헤더 오른쪽에 모바일 메뉴 버튼 추가하기
-                const headerRight = document.querySelector('.header-right');
-                headerRight.appendChild(mobileMenuBtn);
-                
-                // 모바일 메뉴 버튼 클릭 이벤트 추가하기
-                mobileMenuBtn.addEventListener('click', function() {
-                    alert('모바일 메뉴가 준비 중입니다!');
+            // 모바일 메뉴 링크 클릭 시 메뉴 닫기
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            mobileNavLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    // 외부 링크가 아닌 경우에만 메뉴 닫기
+                    const href = this.getAttribute('href');
+                    if (href && href.startsWith('#')) {
+                        mobileNav.classList.remove('show');
+                        console.log('모바일 메뉴 링크 클릭으로 메뉴 닫힘');
+                    }
                 });
-            }
+            });
+            
+            // 모바일 메뉴 외부 클릭 시 닫기
+            document.addEventListener('click', function(e) {
+                if (!mobileMenuBtn.contains(e.target) && !mobileNav.contains(e.target)) {
+                    mobileNav.classList.remove('show');
+                }
+            });
         }
     }
     
-    // 페이지 로드 시 모바일 메뉴 확인하기
-    createMobileMenu();
-    
-    // 화면 크기가 변경될 때마다 모바일 메뉴 확인하기
-    window.addEventListener('resize', createMobileMenu);
+    // 모바일 메뉴 초기화
+    initMobileMenu();
     
     // 헤더 로고 클릭 이벤트 추가하기
     const logo = document.querySelector('.logo');
