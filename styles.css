@@ -888,12 +888,102 @@ main {
     color: #111;
     margin-bottom: 18px;
 }
+/* 지도 플레이스홀더 스타일 */
+.map-placeholder {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 2px solid #dee2e6;
+    border-radius: 15px;
+    padding: 40px 20px;
+    text-align: center;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-placeholder-content h3 {
+    color: #495057;
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.map-placeholder-content p {
+    color: #6c757d;
+    font-size: 18px;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.map-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.map-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.map-btn.naver-map {
+    background-color: #03c75a;
+    color: white;
+    border-color: #03c75a;
+}
+
+.map-btn.naver-map:hover {
+    background-color: #02b350;
+    transform: translateY(-2px);
+}
+
+.map-btn.kakao-map {
+    background-color: #fee500;
+    color: #3c1e1e;
+    border-color: #fee500;
+}
+
+.map-btn.kakao-map:hover {
+    background-color: #fdd835;
+    transform: translateY(-2px);
+}
+
+.map-btn.google-map {
+    background-color: #4285f4;
+    color: white;
+    border-color: #4285f4;
+}
+
+.map-btn.google-map:hover {
+    background-color: #3367d6;
+    transform: translateY(-2px);
+}
+
 @media (max-width: 600px) {
     .store-map-section {
         padding: 20px 0 20px 0;
     }
-    .map-embed-box iframe {
-        min-height: 180px;
+    .map-placeholder {
+        padding: 30px 15px;
+        min-height: 300px;
+    }
+    .map-placeholder-content h3 {
+        font-size: 20px;
+    }
+    .map-placeholder-content p {
+        font-size: 16px;
+    }
+    .map-btn {
+        padding: 10px 20px;
+        font-size: 14px;
     }
     .store-address {
         font-size: 1rem;

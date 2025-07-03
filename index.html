@@ -319,20 +319,20 @@
         <div class="store-map-container">
             <!-- 상단 중앙 제목 -->
             <div class="store-map-title"><strong>매장위치</strong></div>
-            <!-- 네이버 지도 iframe (좌우로 꽉차게) -->
+            <!-- 카카오맵 또는 지도 링크 -->
             <div class="map-embed-box">
-                <!-- 네이버 지도에서 해당 주소로 생성한 지도 embed -->
-                <iframe 
-                    src="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%9A%A9%EC%9D%B8%EC%8B%9C%20%EC%88%98%EC%A7%80%EA%B5%AC%20%EA%B3%A0%EA%B8%B0%EB%A1%9C%20173%EB%B2%88%EA%B8%B8%205" 
-                    width="100%" 
-                    height="400" 
-                    frameborder="0" 
-                    style="border:0; max-width: 100%; min-height: 300px;" 
-                    allowfullscreen="" 
-                    referrerpolicy="no-referrer-when-downgrade" 
-                    title="해율만두전골 위치"
-                    loading="lazy">
-                </iframe>
+                <!-- 임시 지도 대체 영역 -->
+                <div class="map-placeholder">
+                    <div class="map-placeholder-content">
+                        <h3>📍 해율만두전골 위치</h3>
+                        <p>경기도 용인시 수지구 고기로 173번길 5</p>
+                        <div class="map-buttons">
+                            <a href="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%9A%A9%EC%9D%B8%EC%8B%9C%20%EC%88%98%EC%A7%80%EA%B5%AC%20%EA%B3%A0%EA%B8%B0%EB%A1%9C%20173%EB%B2%88%EA%B8%B8%205" target="_blank" class="map-btn naver-map">네이버 지도에서 보기</a>
+                            <a href="https://map.kakao.com/link/search/경기도 용인시 수지구 고기로 173번길 5" target="_blank" class="map-btn kakao-map">카카오맵에서 보기</a>
+                            <a href="https://www.google.com/maps/search/경기도+용인시+수지구+고기로+173번길+5" target="_blank" class="map-btn google-map">구글 지도에서 보기</a>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- 매장 주소 -->
             <div class="store-address">
